@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBookDomain", "Core\CarBookDomain\CarBookDomain.csproj", "{6BF55CA2-EA6E-4EC8-B06F-B2734D2AB49B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Domain", "Core\CarBookDomain\CarBook.Domain.csproj", "{6BF55CA2-EA6E-4EC8-B06F-B2734D2AB49B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrasttructure", "Infrasttructure", "{8ED9300C-7529-4E91-8A8C-15B18999838A}"
 EndProject

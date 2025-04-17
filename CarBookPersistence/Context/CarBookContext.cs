@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarBookDomain.Entities;
+using CarBook.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarBookPersistence.Context
