@@ -10,7 +10,7 @@ using MediatR;
 
 namespace CarBook.Application.Locations.Mediator.Handlers.LocationHandlers
 {
-    public class RemoveLocationCommandHandler : IRequestHandler<RemoveLocationCommand>
+    public class RemoveLocationCommandHandler : IRequestHandler<UpdateLocationCommand>
     {
         private readonly IRepository<Location> _repository;
 
@@ -19,9 +19,9 @@ namespace CarBook.Application.Locations.Mediator.Handlers.LocationHandlers
             _repository = repository;
         }
 
-        public async Task Handle(RemoveLocationCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateLocationCommand request, CancellationToken cancellationToken)
         {
-            var value = await _repository.GetByIdAsync(request.Id);
+            var value = await _repository.GetByIdAsync(request.LocationID);
             await _repository.RemoveAsync(value);
         }
     }
