@@ -9,7 +9,9 @@ namespace CarBook.WebUI.Controllers
     {      
         public IActionResult Index()
         {
-        return View();
+            ViewBag.PageTitle = "Service";
+            ViewBag.PageDescription = "Our Services";
+            return View();
         }
     }
 }

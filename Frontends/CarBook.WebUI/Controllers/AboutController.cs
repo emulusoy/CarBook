@@ -6,6 +6,8 @@ namespace CarBook.WebUI.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.PageTitle = "About";
+            ViewBag.PageDescription = "About Us";
             return View();
         }
     }
