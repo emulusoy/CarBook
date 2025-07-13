@@ -1,4 +1,4 @@
-﻿using CarBook.Application.Features.Mediator.Commands.CarPricingCommands;
+﻿
 using CarBook.Application.Features.Mediator.Queries.CarPricingQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -15,6 +15,7 @@ namespace CarBook.WebApi.Controllers
         {
             _mediator = mediator;
         }
+    
         [HttpGet]
         public async Task<IActionResult> GetCarPricingWithCarList()
         {
@@ -22,13 +23,6 @@ namespace CarBook.WebApi.Controllers
             return Ok(values);
         }
 
-        [HttpGet("GetCarPricingWithTimePeriodList")]
-		public async Task<IActionResult> GetCarPricingWithTimePeriodList()
-		{
-			var values = await _mediator.Send(new GetCarPricingWithTimePeriodQuery());
-			return Ok(values);
-		}
-	}
 
     }
 }
