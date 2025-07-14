@@ -46,7 +46,7 @@ namespace CarBook.WebApi.Controllers
             await _mediator.Send(command);
             return Ok("TagCloud paramaters updated succesfuly");
         }
-        [HttpGet("GetTagCloudByBlogId")]
+        [HttpGet("GetTagCloudByBlogId{id}")]
         public async Task<IActionResult> GetTagCloudByBlogId(int id)
         {
             var values = await _mediator.Send(new GetTagCloudByBlogIdQuery(id));
