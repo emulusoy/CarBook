@@ -18,10 +18,11 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<GetBlogByIdDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<BlogAuthorIdWith>(jsonData);
 
                 return View("/Views/Shared/Components/BlogComponents/_BlogDetailsMainComponentPartial/Default.cshtml",values);
             }
+
 
             return View("/Views/Shared/Components/BlogComponents/_BlogDetailsMainComponentPartial/Default.cshtml");
         }

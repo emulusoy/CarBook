@@ -19,9 +19,9 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<GetByBlogIdTagCloudDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<tag>(jsonData);
 
-                return View("/Views/Shared/Components/BlogComponents/_BlogDetailsTagCloudComponentPartial/Default.cshtml");
+                return View("/Views/Shared/Components/BlogComponents/_BlogDetailsTagCloudComponentPartial/Default.cshtml", values);
             }
 
             return View("/Views/Shared/Components/BlogComponents/_BlogDetailsTagCloudComponentPartial/Default.cshtml");
