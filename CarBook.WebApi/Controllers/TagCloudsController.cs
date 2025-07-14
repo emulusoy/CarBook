@@ -1,8 +1,8 @@
-﻿using CarBook.Application.Features.Mediator.Commands.TagCloudCommands;
-using CarBook.Application.Features.Mediator.Queries.TagCloudQueries;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using CarBook.Application.Features.Mediator.Commands.TagCloudCommands;
+using CarBook.Application.Features.Mediator.Queries.TagCloudQueries;
 
 namespace CarBook.WebApi.Controllers
 {
@@ -11,7 +11,6 @@ namespace CarBook.WebApi.Controllers
     public class TagCloudsController : ControllerBase
     {
         private readonly IMediator _mediator;
-
         public TagCloudsController(IMediator mediator)
         {
             _mediator = mediator;
@@ -25,29 +24,30 @@ namespace CarBook.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTagCloud(int id)
         {
-            var values = await _mediator.Send(new GetTagCloudByIdQuery(id));
-            return Ok(values);
+            var value = await _mediator.Send(new GetTagCloudByIdQuery(id));
+            return Ok(value);
         }
         [HttpPost]
         public async Task<IActionResult> CreateTagCloud(CreateTagCloudCommand command)
         {
             await _mediator.Send(command);
-            return Ok("TagCloud paramaters added succesfuly");
+            return Ok("Etiket Bulutu başarıyla eklendi");
         }
         [HttpDelete]
         public async Task<IActionResult> RemoveTagCloud(int id)
         {
             await _mediator.Send(new RemoveTagCloudCommand(id));
-            return Ok("TagCloud paramaters deleted succesfuly");
+            return Ok("Etiket Bulutu başarıyla silindi");
         }
         [HttpPut]
         public async Task<IActionResult> UpdateTagCloud(UpdateTagCloudCommand command)
         {
             await _mediator.Send(command);
-            return Ok("TagCloud paramaters updated succesfuly");
+            return Ok("Etiket Bulutu başarıyla güncellendi");
         }
-        [HttpGet("GetTagCloudByBlogId{id}")]
-        public async Task<IActionResult> GetTagCloudByBlogId(int id)
+
+        [HttpGet("GetTagClodByBlogId")]
+        public async Task<IActionResult> GetTagClodByBlogId(int id)
         {
             var values = await _mediator.Send(new GetTagCloudByBlogIdQuery(id));
             return Ok(values);

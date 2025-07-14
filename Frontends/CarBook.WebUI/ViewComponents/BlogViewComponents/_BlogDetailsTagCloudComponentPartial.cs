@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using CarBook.Dto.BlogDtos;
 using CarBook.Dto.TagCloudDtos;
 
 namespace CarBook.WebUI.ViewComponents.BlogViewComponents
 {
-    public class _BlogDetailsTagCloudComponentPartial:ViewComponent
+    public class _BlogDetailsTagCloudComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
         public _BlogDetailsTagCloudComponentPartial(IHttpClientFactory httpClientFactory)
@@ -15,16 +16,15 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
         {
             ViewBag.blogid = id;
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"https://localhost:7028/api/TagClouds/GetTagClodByBlogId/" + id);
+            var responseMessage = await client.GetAsync($"https://localhost:7028/api/TagClouds/GetTagClodByBlogId?id=" + id);
+
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<tag>(jsonData);
-
-                return View("/Views/Shared/Components/BlogComponents/_BlogDetailsTagCloudComponentPartial/Default.cshtml", values);
+                var values = JsonConvert.DeserializeObject<List<GetByBlogIdTagCloudDto>>(jsonData);
+                return View(values);
             }
-
-            return View("/Views/Shared/Components/BlogComponents/_BlogDetailsTagCloudComponentPartial/Default.cshtml");
+            return View();
         }
     }
 }

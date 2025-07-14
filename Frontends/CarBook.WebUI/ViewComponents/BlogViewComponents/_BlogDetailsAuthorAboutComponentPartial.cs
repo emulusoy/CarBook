@@ -1,7 +1,8 @@
 ﻿using CarBook.Dto.AuthorDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+using CarBook.Dto.AuthorDtos;
+using CarBook.Dto.TagCloudDtos;
 
 namespace CarBook.WebUI.ViewComponents.BlogViewComponents
 {
@@ -21,10 +22,9 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<GetAuthorByBlogAuthorIdDto>>(jsonData);
-                return View("/Views/Shared/Components/BlogComponents/_BlogDetailsAuthorAboutComponentPartial/Default.cshtml",values);
+                return View(values);
             }
-
-            return View("/Views/Shared/Components/BlogComponents/_BlogDetailsAuthorAboutComponentPartial/Default.cshtml");
+            return View();
         }
     }
 }

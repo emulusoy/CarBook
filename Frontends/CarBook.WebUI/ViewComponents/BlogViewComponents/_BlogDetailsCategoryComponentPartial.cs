@@ -1,11 +1,11 @@
 ﻿using CarBook.Dto.CategoryDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using CarBook.Dto.CategoryDtos;
 
 namespace CarBook.WebUI.ViewComponents.BlogViewComponents
 {
-    public class _BlogDetailsCategoryComponentPartial:ViewComponent
+    public class _BlogDetailsCategoryComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
         public _BlogDetailsCategoryComponentPartial(IHttpClientFactory httpClientFactory)
@@ -20,10 +20,9 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
-                return View("/Views/Shared/Components/BlogComponents/_BlogDetailsCategoryComponentPartial/Default.cshtml", values);
+                return View(values);
             }
-
-            return View("/Views/Shared/Components/BlogComponents/_BlogDetailsCategoryComponentPartial/Default.cshtml");
+            return View();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            return View("/Views/Shared/Components/BlogComponents/_BlogDetailSideBarSearchBoxComponentPartial/Default.cshtml");
+            return View();
         }
     }
 }
