@@ -10,11 +10,11 @@ using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Features.Mediator.Handlers.TagCloudHandlers
 {
-    public class RemovePricingCommandHandler : IRequestHandler<RemoveTagCloudCommand>
+    public class RemoveTagCloudCommandHandler : IRequestHandler<RemoveTagCloudCommand>
     {
         private readonly IRepository<TagCloud> _repository;
 
-        public RemovePricingCommandHandler(IRepository<TagCloud> repository)
+        public RemoveTagCloudCommandHandler(IRepository<TagCloud> repository)
         {
             _repository = repository;
         }

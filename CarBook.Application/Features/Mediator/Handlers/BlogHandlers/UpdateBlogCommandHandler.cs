@@ -10,10 +10,10 @@ using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class UpdatePricingCommandHandler : IRequestHandler<UpdateBlogCommand>
+    public class UpdateBlogCommandHandler : IRequestHandler<UpdateBlogCommand>
     {
         private readonly IRepository<Blog> _repository;
-        public UpdatePricingCommandHandler(IRepository<Blog> repository)
+        public UpdateBlogCommandHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }

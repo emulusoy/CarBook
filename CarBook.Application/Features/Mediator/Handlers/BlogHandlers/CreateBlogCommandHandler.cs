@@ -10,10 +10,10 @@ using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class CreatePricingCommandHandler : IRequestHandler<CreateBlogCommand>
+    public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand>
     {
         private readonly IRepository<Blog> _repository;
-        public CreatePricingCommandHandler(IRepository<Blog> repository)
+        public CreateBlogCommandHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }
@@ -25,7 +25,9 @@ namespace CarBook.Application.Features.Mediator.Handlers.BlogHandlers
                 CategoryID= request.CategoryID,
                 CoverImageUrl= request.CoverImageUrl,
                 CreatedDate= request.CreatedDate,
-                Title = request.Title
+                Title = request.Title,
+                Description = request.Description,
+
             });
         }
     }

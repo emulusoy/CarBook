@@ -12,11 +12,11 @@ using MediatR;
 
 namespace CarBook.Application.Features.Mediator.Handlers.ServiceHandlers
 {
-    public class GetSocialMediaByIdQueryHandler : IRequestHandler<GetServiceByIdQuery, GetServiceByIdQueryResult>
+    public class GetServiceByIdQueryHandler : IRequestHandler<GetServiceByIdQuery, GetServiceByIdQueryResult>
     {
         private readonly IRepository<Service> _repository;
 
-        public GetSocialMediaByIdQueryHandler(IRepository<Service> repository)
+        public GetServiceByIdQueryHandler(IRepository<Service> repository)
         {
             _repository = repository;
         }

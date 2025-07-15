@@ -29,8 +29,4 @@
     <ProjectReference Include="..\CarBook.Dto\CarBook.Dto.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Shared\Components\BlogComponents\" />
-  </ItemGroup>
-
 </Project>

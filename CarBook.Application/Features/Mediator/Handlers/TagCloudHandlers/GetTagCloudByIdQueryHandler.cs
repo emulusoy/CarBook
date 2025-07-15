@@ -12,10 +12,10 @@ using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Features.Mediator.Handlers.TagCloudHandlers
 {
-    public class GetPricingByIdQueryHandler : IRequestHandler<GetTagCloudByIdQuery, GetTagCloudByIdQueryResult>
+    public class GetTagCloudByIdQueryHandler : IRequestHandler<GetTagCloudByIdQuery, GetTagCloudByIdQueryResult>
     {
         private readonly IRepository<TagCloud> _repository;
-        public GetPricingByIdQueryHandler(IRepository<TagCloud> repository)
+        public GetTagCloudByIdQueryHandler(IRepository<TagCloud> repository)
         {
             _repository = repository;
         }

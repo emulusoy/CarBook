@@ -12,10 +12,10 @@ using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Features.Mediator.Handlers.AuthorHandlers
 {
-    public class GetPricingByIdQueryHandler : IRequestHandler<GetAuthorByIdQuery, GetAuthorByIdQueryResult>
+    public class GetAuthorByIdQueryHandler : IRequestHandler<GetAuthorByIdQuery, GetAuthorByIdQueryResult>
     {
         private readonly IRepository<Author> _repository;
-        public GetPricingByIdQueryHandler(IRepository<Author> repository)
+        public GetAuthorByIdQueryHandler(IRepository<Author> repository)
         {
             _repository = repository;
         }
