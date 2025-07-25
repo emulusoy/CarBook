@@ -22,9 +22,20 @@ namespace CarBookPersistence.Repositories.RentACarRepositories
 
         public async Task<List<RentACar>> GetByFilterAsync(Expression<Func<RentACar, bool>> filter)
         {
-            var values =await _context.RentACars
-                .Where(filter)
-                .ToListAsync();
+            var values = await _context.RentACars
+
+          .Where(filter)
+
+          .Include(r => r.Car)
+
+          .ThenInclude(c => c.Brand)
+
+          .Include(r => r.Car)
+
+          .ThenInclude(c => c.CarPricings)
+
+          .ToListAsync();
+
             return values;
         }
     }
