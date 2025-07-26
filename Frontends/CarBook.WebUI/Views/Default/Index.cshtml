@@ -27,46 +27,46 @@
                 <div class="col-md-12	featured-top">
                     <div class="row no-gutters">
                         <div class="col-md-4 d-flex align-items-center">
-                            <form method="post"class="request-form ftco-animate bg-primary">
-                                <h2>Aracınızı Kiralayın</h2>
+                            <form method="post" class="request-form ftco-animate bg-primary">
+                                <h2>Rent Your Car</h2>
                                 <div class="form-group">
-                                    <label for="" class="label">Alınacak Lokasyon</label>
-                                    @Html.DropDownListFor(x => x.LocationID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control", @id = "drop",nameof="locationID"})
+                                    <label for="" class="label">Pickup Location</label>
+                                    @Html.DropDownListFor(x => x.LocationID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control", @id = "drop", nameof = "locationID" })
 
                                 </div>
 
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
-                                        <label for="" class="label">Alış Tarihi</label>
+                                        <label for="" class="label">Pickup Date</label>
                                         <input type="text" class="form-control" id="book_pick_date" name="book_pick_date" placeholder="Date">
                                     </div>
                                     <div class="form-group ml-2">
-                                        <label for="" class="label">İade Tarihi</label>
+                                        <label for="" class="label">Return Date</label>
                                         <input type="text" class="form-control" id="book_off_date" name="book_off_date" placeholder="Date">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="label">Alış Saati</label>
+                                    <label for="" class="label">Pickup Time</label>
                                     <input type="text" class="form-control" id="time_pick" name="time_pick" placeholder="Time">
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="label">İade Saati</label>
+                                    <label for="" class="label">Return Time</label>
                                     <input type="text" class="form-control" name="time_off" id="time_off" placeholder="Time">
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-secondary py-3 px-4">Uygun Araçları Listele</button>
+                                    <button class="btn btn-secondary py-3 px-4">List Available Cars</button>
                                 </div>
                             </form>
                         </div>
                         <div class="col-md-8 d-flex align-items-center">
                             <div class="services-wrap rounded-right w-100">
-                                <h3 class="heading-section mb-4">Araç Kiralamanın En Basit Yolu</h3>
+                                <h3 class="heading-section mb-4">The Easiest Way to Rent a Car</h3>
                                 <div class="row d-flex mb-4">
                                     <div class="col-md-4 d-flex align-self-stretch ftco-animate">
                                         <div class="services w-100 text-center">
                                             <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
                                             <div class="text w-100">
-                                                <h3 class="heading mb-2">Almak İstediğin Konumu Seç</h3>
+                                                <h3 class="heading mb-2">Choose Your Pickup Location</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@
                                         <div class="services w-100 text-center">
                                             <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
                                             <div class="text w-100">
-                                                <h3 class="heading mb-2">En Uygun Araçları Gör</h3>
+                                                <h3 class="heading mb-2">View the Best Cars</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -82,12 +82,12 @@
                                         <div class="services w-100 text-center">
                                             <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
                                             <div class="text w-100">
-                                                <h3 class="heading mb-2">Kiralamayı Tamamla, Hepsi Bu!</h3>
+                                                <h3 class="heading mb-2">Complete the Rental, That's It!</h3>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p><a href="#" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p>
+                                <p><a href="/CarPricing/Index" class="btn btn-primary py-3 px-4">View Our Car Price List</a></p>
                             </div>
                         </div>
                     </div>
