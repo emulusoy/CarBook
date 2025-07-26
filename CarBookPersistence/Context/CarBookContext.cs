@@ -40,7 +40,9 @@ namespace CarBookPersistence.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //iliski olusturma 2 tane id kullandigimiz icin
+            //iliski olusturma 2 tane id kullandigimiz icin bir taraftaki 2 idyi diger tarafaki tek id ile birlestirme
+            //has foreigin key hangi sutunu iliskiledireceksin onu secer1
+
             modelBuilder.Entity<Reservation>().HasOne(x => x.PickUpLocation).WithMany(y => y.PickUpReservation).HasForeignKey(z => z.PickUpLocationID).OnDelete(DeleteBehavior.ClientSetNull);
             modelBuilder.Entity<Reservation>().HasOne(x => x.DropOffLocation).WithMany(y => y.DropOffReservation).HasForeignKey(z => z.DropOffLocationID).OnDelete(DeleteBehavior.ClientSetNull);
         }
