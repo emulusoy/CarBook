@@ -4,6 +4,7 @@ using CarBookPersistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBookPersistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20250727140543_carDescription_tblEdit")]
+    partial class carDescription_tblEdit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -566,42 +569,6 @@ namespace CarBookPersistence.Migrations
                     b.ToTable("Reservations");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.Review", b =>
-                {
-                    b.Property<int>("ReviewID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewID"));
-
-                    b.Property<int>("CarID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerImage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RaytingValue")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ReviewDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ReviewID");
-
-                    b.HasIndex("CarID");
-
-                    b.ToTable("Reviews");
-                });
-
             modelBuilder.Entity("CarBook.Domain.Entities.Service", b =>
                 {
                     b.Property<int>("ServiceID")
@@ -843,17 +810,6 @@ namespace CarBookPersistence.Migrations
                     b.Navigation("PickUpLocation");
                 });
 
-            modelBuilder.Entity("CarBook.Domain.Entities.Review", b =>
-                {
-                    b.HasOne("CarBook.Domain.Entities.Car", "Car")
-                        .WithMany("Reviews")
-                        .HasForeignKey("CarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Car");
-                });
-
             modelBuilder.Entity("CarBook.Domain.Entities.TagCloud", b =>
                 {
                     b.HasOne("CarBook.Domain.Entities.Blog", "Blog")
@@ -893,8 +849,6 @@ namespace CarBookPersistence.Migrations
                     b.Navigation("RentACars");
 
                     b.Navigation("Reservations");
-
-                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("CarBook.Domain.Entities.Category", b =>

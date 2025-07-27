@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarBook.Domain.Entities;
 
-namespace CarBook.Domain.Entities
+namespace CarBook.Application.Features.Mediator.Results.CarDescriptionResults
 {
-    public class CarDescription
+    public class GetCarDescriptionQueryResult
     {
         public int CarDescriptionID { get; set; }
         public int CarID { get; set; }
-        public Car Car { get; set; }
         public string Details { get; set; }
     }
 }

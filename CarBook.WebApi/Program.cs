@@ -6,14 +6,18 @@ using CarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CarBook.Application.Features.CQRS.Handlers.ContactHandlers;
 using CarBook.Application.Interfaces;
 using CarBook.Application.Interfaces.BlogInterfaces;
+using CarBook.Application.Interfaces.CarDescriptionInterfaces;
 using CarBook.Application.Interfaces.CarFeatureInterfaces;
 using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Application.Interfaces.CarPricingInterfaces;
 using CarBook.Application.Interfaces.RentACarInterfaces;
+using CarBook.Application.Interfaces.ReviewInterfaces;
 using CarBook.Application.Interfaces.StatisticsInterfaces;
 using CarBook.Application.Interfaces.TagCloudInterfaces;
 using CarBook.Application.Services;
 using CarBook.Domain.Entities;
+using CarBook.Persistence.Repositories.CarDescriptionRepositories;
+using CarBook.Persistence.Repositories.ReviewRepositories;
 using CarBook.Persistence.Repositories.TagCloudRepositories;
 using CarBookPersistence.Context;
 using CarBookPersistence.Repositories;
@@ -38,6 +42,8 @@ builder.Services.AddScoped(typeof(ITagCloudRepository),typeof(TagCloudRepository
 builder.Services.AddScoped(typeof(IStatisticsRepository),typeof(StatisticsRepository));
 builder.Services.AddScoped(typeof(IRentACarRepository),typeof(RentACarRepository));
 builder.Services.AddScoped(typeof(ICarFeatureRepository),typeof(CarFeatureRepository));
+builder.Services.AddScoped(typeof(ICarDescriptionRepository),typeof(CarDescriptionRepository));
+builder.Services.AddScoped(typeof(IReviewRepository),typeof(ReviewRepository));
 //apileri cagir
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
