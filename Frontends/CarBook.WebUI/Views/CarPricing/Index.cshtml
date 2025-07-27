@@ -41,7 +41,9 @@
                                         <p class="btn-custom"><a href="#">Rent This Car</a></p>
                                         <div class="price-rate">
                                             <h3>
-                                                <span class="num"><small class="currency">₺</small> @item.dailyAmount</span>
+                                                <span class="num"><small class="currency">₺</small> @item.dailyAmount.ToString("#,0.##")</span>
+
+
                                                 <span class="per">/Daily Price</span>
                                             </h3>
                                         </div>
@@ -51,7 +53,7 @@
                                         <p class="btn-custom"><a href="#">Rent This Car</a></p>
                                         <div class="price-rate">
                                             <h3>
-                                                <span class="num"><small class="currency">₺</small> @item.weeklyAmount</span>
+                                                <span class="num"><small class="currency">₺</small> @item.weeklyAmount.ToString("#,0.##")</span>
                                                 <span class="per">/Weekly Price</span>
                                             </h3>
                                         </div>
@@ -61,7 +63,7 @@
                                         <p class="btn-custom"><a href="#">Rent This Car</a></p>
                                         <div class="price-rate">
                                             <h3>
-                                                <span class="num"><small class="currency">₺</small> @item.monthlyAmount</span>
+                                                <span class="num"><small class="currency">₺</small> @item.monthlyAmount.ToString("#,0.##")</span>
                                                 <span class="per">/Monthly Price</span>
                                             </h3>
                                         </div>
