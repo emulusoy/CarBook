@@ -59,13 +59,14 @@ WebUI Frontends tarafi.
 </details>
 
 
-
-   <summary>CARDETAIL PAGE</summary>
+<details>
+   <summary> 💾 CARDETAIL PAGE (Genişletmek için tıklayın)</summary>
    <img width="2560" height="1440" alt="Screenshot 2025-07-28 181549" src="https://github.com/user-attachments/assets/ca14bcef-7f7f-4988-b5de-8345ffae8e0c" />
-
-   <summary>CARDETAIL-REVIEW</summary>
+</details>
+<details>
+   <summary> 💾 CARDETAIL-REVIEW (Genişletmek için tıklayın)</summary>
 <img width="2560" height="1440" alt="Screenshot 2025-07-28 181922" src="https://github.com/user-attachments/assets/c78e7dea-31a9-474c-877b-71dd49faefa5" />
-
+</details>
 
 </details>
 <details>
