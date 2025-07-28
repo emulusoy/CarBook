@@ -2,9 +2,11 @@
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="Admin")]
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/{id?}")]
     public class AdminLocationController : Controller

@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Text;
 using CarBook.Application.Features.CQRS.Handlers.AboutHandlers;
 using CarBook.Application.Features.CQRS.Handlers.BannerHandlers;
 using CarBook.Application.Features.CQRS.Handlers.BrandHandlers;
@@ -15,6 +17,7 @@ using CarBook.Application.Interfaces.ReviewInterfaces;
 using CarBook.Application.Interfaces.StatisticsInterfaces;
 using CarBook.Application.Interfaces.TagCloudInterfaces;
 using CarBook.Application.Services;
+using CarBook.Application.Tools;
 using CarBook.Domain.Entities;
 using CarBook.Persistence.Repositories.CarDescriptionRepositories;
 using CarBook.Persistence.Repositories.ReviewRepositories;
@@ -27,9 +30,26 @@ using CarBookPersistence.Repositories.CarPricingRepositories;
 using CarBookPersistence.Repositories.CarRepositories;
 using CarBookPersistence.Repositories.RentACarRepositories;
 using CarBookPersistence.Repositories.StatisticsRepositories;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.RequireHttpsMetadata = false;
+    opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidAudience = JwtTokenDefault.ValidAudience,
+        ValidIssuer = JwtTokenDefault.ValidIssuer,
+        ClockSkew = TimeSpan.Zero,
+        IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefault.Key)),
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+    };
+});
 // Add services to the container.
 //context siunifi
 builder.Services.AddScoped<CarBookContext>();
@@ -89,10 +109,11 @@ builder.Services.AddScoped<RemoveContactCommandHandler>();
 
 builder.Services.AddApplicationService(builder.Configuration);
 
+builder.Services.AddControllers().AddFluentValidation(x =>
+{
+    x.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+});
 
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -106,7 +127,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
