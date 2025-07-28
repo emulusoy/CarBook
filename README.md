@@ -13,7 +13,7 @@ Bu proje, .NET Core 8.0 kullanılarak geliştirilmiş, Onion Architecture prensi
 * **Fluent Validation**: Veri doğrulama kurallarını belirlemek için.
 
 
-## 🏛️ Proje Mimarisi ve Ana Klasör Yapısı
+## <span style="font-size: 182px;">🏛️ Proje Mimarisi ve Ana Klasör Yapısı</span>
 
 Proje, bağımsız ve test edilebilir katmanlar oluşturmak için Onion Architecture desenini kullanır. Bu mimari, iş mantığını dış bağımlılıklardan (veri erişimi, UI vb.) ayırarak daha temiz bir kod tabanı ve daha kolay bakım sağlar. Projenizdeki ana klasörler bu mimari katmanlarla aşağıdaki gibi eşleşmektedir:
 
