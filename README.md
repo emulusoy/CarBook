@@ -34,6 +34,13 @@ WebUI Frontends tarafi.
 
 ANASAYFA
 <details>
+   <summary>**Infrastructure/Persistence Katmanı Görseli (Genişletmek için tıklayın)**</summary>
+
   <img width="1920" height="6239" alt="Home" src="https://github.com/user-attachments/assets/062a5f71-ff5e-4bee-9b15-7cdc4f720861" />
+
+</details>
+Arac Kiralama Sayfasi 
+<details>
+   <img width="1445" height="789" alt="image" src="https://github.com/user-attachments/assets/0328908b-4125-4652-ad0a-35329e80b2a8" />
 
 </details>
