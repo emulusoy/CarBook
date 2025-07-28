@@ -78,9 +78,9 @@ WebUI Frontends tarafi.
 
 
 
-Projede 75 araç her araca ait özellikler vs vs hepsi mimariye uygun çalışıyor bunların hepsini Admin Sayfasından yönetim yapabiliyorsunuz.
+***Projede 75 araç her araca ait özellikler vs vs hepsi mimariye uygun çalışıyor bunların hepsini Admin Sayfasından yönetim yapabiliyorsunuz.
 
-Aşağıda Admin sayfası ve gerekli fotoğrafları bırakıyorum.
+***Aşağıda Admin sayfası ve gerekli fotoğrafları bırakıyorum.
 
 <details>
    <summary> 💾 ADMIN SAYFASI DASHBOARD-(Genişletmek için tıklayın)</summary> 
