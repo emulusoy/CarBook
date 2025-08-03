@@ -1,4 +1,5 @@
-# CarBook
+Bu proje, .NET Core 8.0 kullanılarak geliştirilmiş, Onion Architecture prensipleriyle geliştirilmiştir. Modüler, test edilebilir ve sürdürülebilir bir yapı sunmayı hedefler.
+
 
 ## 🚗 CarBook - Araç Kiralama
 
